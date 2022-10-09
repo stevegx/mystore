@@ -93,28 +93,7 @@
     color: var(--main-orange);
 }
 
-.navbar-cart-menu{
-    position: absolute;
-    top: 3.5rem;
-    right: 2rem;
-    background-color: var(--light-dark);
-    color: var(--light-white);
-    display: flex;
-    flex-direction: column;
-}
 
-.navbar-cart-menu h3{
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 1vh 1vw;
-    cursor: pointer;
-}
-
-.navbar-cart-menu h3:hover{
-    color: var(--main-orange);
-}
 .hide{
     display: none;
 }

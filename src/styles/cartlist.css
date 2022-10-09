@@ -1,0 +1,5 @@
+.cartlist{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
