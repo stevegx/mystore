@@ -1,0 +1,122 @@
+.navbar{
+    background-color: var(--light-dark);
+    color: var(--light-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vh 2vw;
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+.navbar-Logo{
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+
+.tone{
+    color: var(--main-orange);
+}
+
+.navbar-Search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-white);
+    color: var(--light-dark);
+    border-radius: 10px;
+}
+
+.navbar-Search span{
+    border: none;
+    outline: none;
+    background-color: var(--light-white);
+    border-radius: 10px;
+}
+
+.navbar-Search input{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 1vh 0.5vw;
+    width: 20vw;
+    min-width: 10rem;
+    font-size: 1rem;
+}
+
+.navbar-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+.navbar-menu button{
+    border: none;
+    outline: none;
+    background-color: var(--light-dark);
+    color: var(--light-white);
+    cursor: pointer;
+}
+
+.navbar-menu button:active{
+    color: var(--main-orange);
+}
+
+
+
+.navbar-menu button span{
+    font-size: 1.7rem;
+}
+
+.navbar-user-menu{
+    position: absolute;
+    top: 3.5rem;
+    right: 3rem;
+    background-color: var(--light-dark);
+    color: var(--light-white);
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-user-menu h3{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1vh 1vw;
+    cursor: pointer;
+}
+
+.navbar-user-menu h3:hover{
+    color: var(--main-orange);
+}
+
+.navbar-cart-menu{
+    position: absolute;
+    top: 3.5rem;
+    right: 2rem;
+    background-color: var(--light-dark);
+    color: var(--light-white);
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-cart-menu h3{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1vh 1vw;
+    cursor: pointer;
+}
+
+.navbar-cart-menu h3:hover{
+    color: var(--main-orange);
+}
+.hide{
+    display: none;
+}
+
+
