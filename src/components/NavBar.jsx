@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/navbar.css'
 import Cart from './cart/Cart.jsx'
-export default function NavBar({products}) {
+export default function NavBar() {
 
 
     const toggleUserMenu = (e)=>{

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import StoreContext from '../../StoreContext'
 
 export default function CartItems() {
-      
+     
+  const item = useContext(StoreContext)
 //   const Price = cartProduct.price * cartProduct.quantity
- 
+ console.log(item);
   const deleteItems = (e)=>{
    
     // setCartItems(cartItems.filter((element)=> element.id !== cartProduct.id))

@@ -1,11 +1,9 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
-export default function MainPage({products,setProducts}) {
+export default function MainPage() {
   return (
     <>
-    <NavBar 
-    products={products}
-    />
+    <NavBar/>
     </>
     
   )
