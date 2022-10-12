@@ -6,15 +6,9 @@ export function StoreProvider({children}){
 
     const [products,setProducts] = useState([])
     const [getProducts,setGetProducts] = useState([])
-    const [cartItems, setCartItems] = useState([
-        {
-            name:'',
-            img:'',
-            price: 0,
-            amount: 1,
-        }
-    ])
-    
+    const [cartItems, setCartItems] = useState([])
+    const [favoriteItems, setFavoriteItems] = useState([])
+
     useEffect(() => {
       const fetchProducts = async () =>{
         const res = await
@@ -29,7 +23,7 @@ export function StoreProvider({children}){
 
 
     return(
-        <StoreContext.Provider value={{products,setProducts,cartItems,setCartItems}}>
+        <StoreContext.Provider value={{products,setProducts,cartItems,setCartItems,favoriteItems, setFavoriteItems}}>
             {children} 
         </StoreContext.Provider>
     )

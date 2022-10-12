@@ -1,0 +1,29 @@
+.navbar-favorites-menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 7vh;
+    right: 3vw;
+    width: 50%;
+    height: 50vh;
+    background-color: var(--light-dark);
+    color: var(--light-white);
+    overflow-y: auto;
+}
+
+
+.navbar-favorites-menu button{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 1vh 1vw;
+ }
+ 
+ .hide{
+     display: none;
+ }
+
+
+ .navbar-favorites-menu h1{
+    text-align: center;
+ }

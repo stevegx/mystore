@@ -1,22 +1,27 @@
 import React, {useContext} from 'react'
+import '../../styles/cartitems.css'
 import StoreContext from '../../StoreContext'
 
-export default function CartItems() {
+export default function CartItems(cartItems) {
      
   const item = useContext(StoreContext)
-//   const Price = cartProduct.price * cartProduct.quantity
+  const price = cartItems.cartItems.price * cartItems.cartItems.amount
+
   const deleteItems = (e)=>{
-   
-    // setCartItems(cartItems.filter((element)=> element.id !== cartProduct.id))
+    item.setCartItems(item.cartItems.filter((element)=> element.id !== cartItems.cartItems.id))
   }
 
   return (
-    <div className='cartitems-container'>
-        {/* <img src={cartProduct.image} alt="" className='cart-products-image'/> */}
-        <h2 className='cart-products-title'>cartProduct.title</h2>
-        <h3 className='cart-products-amount'>cartProduct.quantity</h3>
-        <h3 className='cart-products-price'>Price.toFixed(2)$</h3>
-        <button onClick={deleteItems} className='cart-products-removebtn'><span className="material-symbols-outlined remove">remove</span></button>
+    <>
+     <div className='cart-products-container'>
+        <img src={cartItems.cartItems.image} alt={cartItems.cartItems.description} className='cart-products-image'/>
+        <h2 className='cart-products-title'>{cartItems.cartItems.title}</h2>
+        <h3 className='cart-products-amount'>x{cartItems.cartItems.amount}</h3>
+        <h3 className='cart-products-price'>{price.toFixed(2)}$</h3>
+        <input className='cart-products-remove' type="submit" onClick={deleteItems} value={'-'} />
     </div>
+    
+    </>
+   
   )
 }

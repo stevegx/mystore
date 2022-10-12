@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/navbar.css'
 import Cart from './cart/Cart.jsx'
+import Favorites from './favorites/Favorites.jsx'
 export default function NavBar() {
 
 
@@ -23,6 +24,11 @@ export default function NavBar() {
                 <h3><span className="material-symbols-outlined">settings</span>Settings</h3>
                 <h3><span className="material-symbols-outlined">logout</span>Logout</h3>
           </div>
+            <Favorites/> 
+            {/* dokimase  <div>
+                          <div>red-dot</div>
+                          <favorites/>
+                          </div>  */}
             <Cart/>
         </div>
     </nav>

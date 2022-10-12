@@ -1,0 +1,37 @@
+.favorite-products-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1vh 1vw;
+    gap: 1rem;
+}
+
+.favorite-products-image{
+    height: 6rem;
+    width: 6rem;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+.favorite-products-title{
+    font-size: 1.2rem;
+    font-weight: 400;
+  
+}
+
+
+.favorite-products-remove{
+    border: none;
+    outline: none;
+    background-color: var(--light-dark);
+    color: var(--light-white);
+    font-size: 3rem;
+    position:relative;
+    top: -0.4rem;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.favorite-products-remove:active{
+    color: var(--main-orange);
+}

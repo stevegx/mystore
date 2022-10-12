@@ -8,7 +8,7 @@
     height: 92vh;
     background-color: var(--light-dark);
     color: var(--light-white);
-    overflow-y: scroll;
+    overflow-y:auto;
 }
 
 .navbar-cart-menu button{
@@ -20,4 +20,8 @@
 
 .hide{
     display: none;
+}
+
+.navbar-cart-menu h1{
+    text-align: center;
 }

@@ -3,7 +3,7 @@ import CartList from '../cart/CartList'
 import '../../styles/cart.css'
 export default function () {
     const toggleMenu = (e)=>{
-        e.nativeEvent.path[2].children[3].classList.toggle('hide')
+        e.nativeEvent.path[2].children[5].classList.toggle('hide')
     }
 
     const toggleCart = (e)=>{
@@ -13,6 +13,7 @@ export default function () {
     <>
     <button onClick={toggleMenu} className='navbar-menu-buttons'><span className="material-symbols-outlined">shopping_cart</span></button>
     <div className='navbar-cart-menu hide'>
+      <h1>Your Cart</h1>
         <button onClick={toggleCart} ><span className="material-symbols-outlined">close</span></button>
         <CartList/>
     </div>

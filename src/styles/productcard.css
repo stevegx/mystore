@@ -7,7 +7,7 @@
     border: none;
     cursor: pointer;
     height: 25rem;
-    width: 20rem;
+    width: 17rem;
     border-radius: 20px;
     padding: 0vh 2vw;
     background-color: white;
@@ -16,8 +16,8 @@
     box-shadow: 0px 0px 8px 1px var(--main-orange);
 }
 .product-card-image{
-    height: 40%;
-    width: 70%;
+    height: 30%;
+    width: 60%;
     object-fit: contain;
 }
 
@@ -71,6 +71,8 @@
     font-weight: 500;
 }
 
+
+
 .product-card-addbtn-cart{
     border: none;
     outline: none;
@@ -85,3 +87,32 @@
 .product-card-addbtn-cart:active{
     background-color: #c03300;
 }
+
+.product-card-favorite{
+    position: relative;
+    bottom: 1rem;
+    left: 5.5rem;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    color: rgba(255, 0, 0, 0.534);
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+.product-card-favorite:active{
+    color: red;
+}
+
+.active{
+    color: red;
+}
+

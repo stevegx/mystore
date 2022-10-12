@@ -1,9 +1,9 @@
 .main-section-list{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 20rem 20rem 20rem 20rem;
     margin: 2vh 2vw;
     align-items: center;
-    gap: 2vw;
+    gap: 4vh 0vw;
     background-color: var(--light-white);
 }
 
