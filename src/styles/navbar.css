@@ -102,8 +102,8 @@
 .navbar-menu-favorite-badge{
     position: relative;
     background-color: red;
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
     border-radius: 50px;
     bottom: 18px;
     left: 35px;
@@ -113,15 +113,15 @@
 .navbar-menu-favorite-badge h4{
     position: relative;
     bottom: 2px;
-    left: 4px;
+    left: 4.5px;
     font-size: 0.8rem;
 }
 
 .navbar-menu-cart-badge{
     position: relative;
     background-color: red;
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
     border-radius: 50px;
     bottom: 18px;
     left: 37px;
@@ -131,6 +131,6 @@
 .navbar-menu-cart-badge h4{
     position: relative;
     bottom: 2px;
-    left: 4px;
+    left: 4.5px;
     font-size: 0.8rem;
 }
