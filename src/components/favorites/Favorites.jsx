@@ -4,7 +4,7 @@ import FavoritesList from './FavoritesList.jsx'
 
 export default function Favorites() {
     const toggleMenu = (e)=>{
-        e.nativeEvent.path[2].children[3].classList.toggle('hide')
+        e.nativeEvent.path[2].children[4].classList.toggle('hide')
     }
 
     const toggleFavorites = (e)=>{

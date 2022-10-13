@@ -3,7 +3,8 @@ import CartList from '../cart/CartList'
 import '../../styles/cart.css'
 export default function () {
     const toggleMenu = (e)=>{
-        e.nativeEvent.path[2].children[5].classList.toggle('hide')
+        e.nativeEvent.path[2].children[7].classList.toggle('hide')
+        // console.log(e.nativeEvent.path[2].children);
     }
 
     const toggleCart = (e)=>{

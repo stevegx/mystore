@@ -23,7 +23,7 @@ export function StoreProvider({children}){
 
 
     return(
-        <StoreContext.Provider value={{products,setProducts,cartItems,setCartItems,favoriteItems, setFavoriteItems}}>
+        <StoreContext.Provider value={{products,setProducts,getProducts,setGetProducts,cartItems,setCartItems,favoriteItems, setFavoriteItems}}>
             {children} 
         </StoreContext.Provider>
     )

@@ -20,10 +20,11 @@ const addToFavorite = (e)=>{
   const saveClickItem = {...product}
   const exist = item.favoriteItems.find((element) => element.id === saveClickItem.id)
   if(exist){
-    return
+    item.setFavoriteItems(item.favoriteItems.filter((element)=> element.id !== saveClickItem.id))
+    e.target.classList.toggle("active")
   }else{
     item.setFavoriteItems([...item.favoriteItems,product])
-    // e.target.classList.toggle("active")
+    e.target.classList.toggle("active")
   }
 }
 
@@ -47,8 +48,8 @@ const addToFavorite = (e)=>{
     <div className='product-card-container'>
         <button onClick={addToFavorite} className='product-card-favorite '><span className="material-symbols-outlined">favorite</span></button>
         <img src={product.image} alt="its a shoe" className='product-card-image'/>
-        <h1 className='product-card-title'>{product.title.split(" ").splice(0,5).join(" ")}</h1>
-        <h4 className='product-card-rating'>{product.rating.rate} <span className="material-symbols-outlined star">grade</span></h4>
+        <h1 className='product-card-title'>{product.title.split(" ").splice(0,5).join(" ")}</h1>         
+          <h4 className='product-card-rating'>{product.rating.rate} <span className="material-symbols-outlined star">grade</span></h4>
         <h3 className='product-card-price'>{product.price}$</h3>
         <div className="product-card-amount">
             <button onClick={addAmount} className='product-card-addbtn'><span className="material-symbols-outlined add">add</span></button>
