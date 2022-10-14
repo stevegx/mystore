@@ -1,0 +1,66 @@
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #333331e0;
+    height: 50rem;
+    width: 20rem;
+    color: var(--light-white);
+    padding: 1vh 1vw;
+    gap: 1vh 0vw;
+}
+
+.sidebar-title{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.sidebar-category{
+    display: flex;
+    flex-direction: column;
+}
+ 
+.sidebar-category h3{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.sidebar-rating{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-rating{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+.sidebar-category-option{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sidebar-container label{
+    font-size: 1.1rem;
+}
+
+.checkbox{
+    height: 17px;
+    width: 17px;
+    cursor: pointer;
+}
+
+.sidebar-price{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.sidebar-name{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+

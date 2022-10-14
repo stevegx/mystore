@@ -1,4 +1,4 @@
-import React, {useState , useContext , useEffect} from 'react'
+import React, {useState , useContext} from 'react'
 import '../../styles/productcard.css'
 import StoreContext from '../../StoreContext'
 export default function ProductCard({product}) {

@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react'
+import React, {useState,useContext,useEffect} from 'react'
 import '../styles/navbar.css'
 import Cart from './cart/Cart.jsx'
 import Favorites from './favorites/Favorites.jsx'
@@ -11,19 +11,14 @@ export default function NavBar() {
     e.nativeEvent.path[2].children[1].classList.toggle('hide')
     }
 
-    const FilterSearch = (e)=> {
-        e.preventDefault()
-        setSearchRequest(e.target.value)
-        console.log(searchRequest.length);
-       if(searchRequest.length > 0){
-        let newArray = item.getProducts.filter(item => item.title.toLowerCase().includes(searchRequest))
-        item.setProducts(newArray)
-       }else{
-        item.setProducts(item.products)
-       }
-//  need fix there is a bug with the search
-     
-        }
+    useEffect(() => {
+            if(searchRequest.length > 0){
+                let newArray = item.getProducts.filter(item => item.title.toLowerCase().includes(searchRequest))
+                item.setProducts(newArray)
+            }else{
+                item.setProducts(item.getProducts)
+            }
+    },[searchRequest]);
 
   return (
     <nav className='navbar'>
@@ -32,7 +27,7 @@ export default function NavBar() {
         
         <div className="navbar-Search">
             <span className="material-symbols-outlined">search</span>
-            <input type="text" value={searchRequest} onChange={FilterSearch}/>
+            <input type="text" value={searchRequest} onChange={(e)=>{setSearchRequest(e.target.value)}}/>
         </div>
 
         <div className="navbar-menu">

@@ -5,6 +5,25 @@
   font-family: 'Oswald', sans-serif;
 }
 
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #4A4A4A; 
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+}
 :root{
   --light-dark: #333331;
   --light-white: #FEFEFE;
