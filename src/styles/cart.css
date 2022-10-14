@@ -6,7 +6,7 @@
     right: 0vw;
     width: 50%;
     height: 92vh;
-    background-color: var(--light-dark);
+    background-color: #333331f6;
     color: var(--light-white);
     overflow-y:auto;
 }
@@ -16,6 +16,7 @@
    top: 0px;
    right: 0px;
    margin: 1vh 1vw;
+   background-color: transparent;
 }
 
 .hide{

@@ -6,7 +6,7 @@ export default function ProductList() {
 
     const item = useContext(StoreContext)
     const product = item.products
-    console.log(item.products);
+
   return (
          product.map(element =>{
         return (
