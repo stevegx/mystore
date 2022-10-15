@@ -1,6 +1,7 @@
 import React, { useState , useContext, useEffect} from 'react'
 import '../../styles/sidebar.css'
 import StoreContext from '../../StoreContext'
+import { isAccordionItemSelected } from 'react-bootstrap/esm/AccordionContext'
 export default function SideBar() {
     
     const item = useContext(StoreContext)
@@ -8,7 +9,8 @@ export default function SideBar() {
     const [max,setMax] = useState(1100)
     const [priceValue,setPriceValue] = useState(0)
     const [testArray,setTestArray] = useState([])
-    const [category,setCategory] = useState([{index:0,id:"men's clothing" , isChecked:false},
+    const [category,setCategory] = useState([
+    {index:0,id:"men's clothing" , isChecked:false},
     {index:1,id:"jewelery" , isChecked:false},
     {index:2,id:"electronics" , isChecked:false},
     {index:3,id:"women's clothing" , isChecked:false},
@@ -16,15 +18,30 @@ export default function SideBar() {
 
     useEffect(()=>{
         let categoryArray = category.filter(obj => obj.isChecked == true)
-let myArray = []
-   for(let i=0;i<categoryArray.length;i++){
-   myArray[i]=item.products.filter(product => product.category == categoryArray[i].id)
-  }    
-  console.log(myArray);
-  setTestArray(...myArray)
-
+        let categoryFilter = []
+        for(let i=0;i<categoryArray.length;i++){
+        categoryFilter[i]=item.products.filter(product => product.category == categoryArray[i].id)
+        }   
+        if(categoryFilter.length>0)
+        {
+            for(let i=0;i<categoryFilter.length;i++)
+            {
+                item.setProducts(categoryFilter[i]) //prepei na breis tropo na sundiaseis pollapla input categories gt twra pairnei mono to ena
+                
+            }
+        }else{
+            item.setProducts(item.getProducts)
+        }
+        // dokimase setCount(currentCount =>{return currentCount + amount})
+        // console.log(categoryFilter);
+        console.log(item.products);
+        // setTestArray(categoryFilter)
+       
+     
         let newArray = item.products.filter(product => product.price > priceValue)
-        item.setProducts(newArray)
+        console.log(newArray);
+        
+        // item.setProducts(newArray)
  
     },[priceValue,category])
     
