@@ -83,33 +83,7 @@ const handleCheck = (e)=>{
         <h3 className='sidebar-price'>Price > {priceValue}$ <span className='product-array-length'>({item.products.length})</span></h3>
         <input type="range" className='sidebar-price' min={min} max={max} step={10} value={priceValue} onChange={(e)=>setPriceValue(e.target.value)}/>
       
-      <form className='sidebar-rating'>
-        <h3>Rating <span className='product-array-length'>({item.products.length})</span></h3>
-        <div className='sidebar-category-option'> 
-            <label htmlFor="sidebar-rating1">1<span className="material-symbols-outlined">star</span></label>
-            <input type="checkbox" className='sidebar-rating1 checkbox'/>
-        </div>
-        <div className='sidebar-category-option'> 
-            <label htmlFor="sidebar-rating2">2<span className="material-symbols-outlined">star</span></label>
-            <input type="checkbox" className='sidebar-rating2 checkbox'/>
-        </div>
-        <div className='sidebar-category-option'>
-            <label htmlFor="sidebar-rating3">3<span className="material-symbols-outlined">star</span></label>
-            <input type="checkbox" className='sidebar-rating3 checkbox'/>
-        </div>
-        <div className='sidebar-category-option'>
-            <label htmlFor="sidebar-rating4">4<span className="material-symbols-outlined">star</span></label>
-            <input type="checkbox" className='sidebar-rating4 checkbox'/>
-        </div>
-        <div className='sidebar-category-option'>
-            <label htmlFor="sidebar-rating5">5<span className="material-symbols-outlined">star</span></label>
-            <input type="checkbox" className='sidebar-rating5 checkbox'/>
-        </div>
-       
     
-
-
-      </form>
     
     </div>
   )

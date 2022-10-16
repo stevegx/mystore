@@ -1,0 +1,31 @@
+.imagecarousel-container{
+    height: 40vh;
+    width: 100%;
+    margin: 2.5rem 0rem;
+    background-color: var(--light-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagecarousel-image{
+    height: 100%;
+    width: 100%;
+    object-fit:contain;
+}
+
+.imagecarousel-container button{
+    border: none;
+    background-color: var(--light-white);
+    cursor: pointer;
+    padding: 10rem 10rem;
+}
+
+.imagecarousel-container button:hover{
+    background-color: #33333115;
+}
+
+
+.imagecarousel-container span{
+    font-size: 3rem;
+}

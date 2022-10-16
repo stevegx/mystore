@@ -1,6 +1,5 @@
-.main-section-wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.main-section-head{
+    display: flex;
 }
 
 .main-section-list{
