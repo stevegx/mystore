@@ -33,14 +33,13 @@ useEffect(()=>{
     if(example.length==0)
     {
         newArray = item.products
-        item.setProducts(item.getProducts)
+        // item.setProducts(item.getProducts)
         newArray = item.getProducts.filter(product => product.price > priceValue)
         item.setProducts(newArray)
     }else if(example.length!=0){
        newArray =  example.filter(product=>product.price > priceValue)
         item.setProducts(newArray)
     }
-    // sxedon eimaste konta prepei na breis otan kanena filtro apo to kategory den einai checked h to prica an einai mhden na kanei reset
 },[category,priceValue])
 
 const handleCheck = (e)=>{
