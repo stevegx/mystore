@@ -21,7 +21,7 @@ useEffect(()=>{
     let categoryFilter = []
     for (let index = 0; index < category.length; index++) {
        if(category[index].isChecked ==true){
-           let value = item.getProducts.filter(product => product.category == category[index].id)
+           let value = item.filteredArray.filter(product => product.category == category[index].id)
             categoryFilter=[...categoryFilter,value]
        }
         }   
@@ -34,7 +34,7 @@ useEffect(()=>{
     {
         newArray = item.products
         // item.setProducts(item.getProducts)
-        newArray = item.getProducts.filter(product => product.price > priceValue)
+        newArray = item.filteredArray.filter(product => product.price > priceValue)
         item.setProducts(newArray)
     }else if(example.length!=0){
        newArray =  example.filter(product=>product.price > priceValue)

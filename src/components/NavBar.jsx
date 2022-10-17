@@ -13,10 +13,10 @@ export default function NavBar() {
 
     useEffect(() => {
             if(searchRequest.length > 0){
-                let newArray = item.getProducts.filter(item => item.title.toLowerCase().includes(searchRequest))
+                let newArray = item.filteredArray.filter(item => item.title.toLowerCase().includes(searchRequest))
                 item.setProducts(newArray)
             }else{
-                item.setProducts(item.getProducts)
+                item.setProducts(item.filteredArray)
             }
     },[searchRequest]);
 

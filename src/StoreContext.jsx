@@ -8,13 +8,14 @@ export function StoreProvider({children}){
     const [getProducts,setGetProducts] = useState([])
     const [cartItems, setCartItems] = useState([])
     const [favoriteItems, setFavoriteItems] = useState([])
-
+    const [filteredArray,setFilteredArray] = useState([])
     useEffect(() => {
       const fetchProducts = async () =>{
         const res = await
         axios.get("https://fakestoreapi.com/products")
         setProducts(res.data)
         setGetProducts(res.data)
+        setFilteredArray(res.data)
       }
       fetchProducts()
     },[])
@@ -23,7 +24,7 @@ export function StoreProvider({children}){
 
 
     return(
-        <StoreContext.Provider value={{products,setProducts,getProducts,setGetProducts,cartItems,setCartItems,favoriteItems, setFavoriteItems}}>
+        <StoreContext.Provider value={{products,setProducts,getProducts,setGetProducts,cartItems,setCartItems,favoriteItems, setFavoriteItems,filteredArray,setFilteredArray}}>
             {children} 
         </StoreContext.Provider>
     )

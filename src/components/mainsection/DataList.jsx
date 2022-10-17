@@ -10,40 +10,50 @@ export default function DataList({}) {
 
     useEffect(()=>{
         //checkareto kai me if thn prwth fora douleuei tis upoloipes xreiazetai kapoio refresh
+
+
         switch (sortOption) {
             case "popularity":
                 setSortArray(item.getProducts.sort((a,b)=> b.rating.count - a.rating.count))
-                item.setProducts(sortArray)
+                item.setFilteredArray(sortArray)
+                item.setProducts(item.filteredArray)
                 break;
         
             case "pricelow":
             setSortArray(item.getProducts.sort((a,b)=> a.price - b.price))
-            item.setProducts(sortArray)
+            item.setFilteredArray(sortArray)
+            item.setProducts(item.filteredArray)
                 break;    
             
             case "pricehigh":
                 setSortArray(item.getProducts.sort((a,b)=> b.price-a.price ))
-                item.setProducts(sortArray)
+                item.setFilteredArray(sortArray)
+                item.setProducts(item.filteredArray)
                 break;
             case "ratinglow":
                 setSortArray(item.getProducts.sort((a,b)=> a.rating.rate - b.rating.rate))
-                item.setProducts(sortArray)
-
+                item.setFilteredArray(sortArray)
+                item.setProducts(item.filteredArray)
                 
             break;
 
             case "ratinghigh":
                 setSortArray(item.getProducts.sort((a,b)=> b.rating.rate -a.rating.rate ))
-                item.setProducts(sortArray)
+                item.setFilteredArray(sortArray)
+                item.setProducts(item.filteredArray)
                 break;
                   
             
             default:
                 setSortArray(item.getProducts.sort((a,b)=> b.rating.count - a.rating.count))
-                item.setProducts(sortArray)
+                item.setFilteredArray(sortArray)
+                item.setProducts(item.filteredArray)
                 break;
         }
+
     },[sortOption,sortArray])
+    
+   
 
     const handleOption = (e)=>{
     setSortOption(e.target.value)
