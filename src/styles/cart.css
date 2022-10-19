@@ -6,9 +6,10 @@
     right: 0vw;
     width: 50%;
     height: 92vh;
-    background-color: #333331f6;
+    background-color: #333331e0;
     color: var(--light-white);
     overflow-y:auto;
+    z-index: 1;
 }
 
 .navbar-cart-menu button{
@@ -25,4 +26,10 @@
 
 .navbar-cart-menu h1{
     text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+    .navbar-cart-menu{
+        width: 80%;
+    }
 }

@@ -4,6 +4,7 @@
     justify-content: space-between;
     margin: 1vh 1vw;
     gap: 1rem;
+    z-index: 1;
 }
 
 .cart-products-image{
@@ -33,7 +34,7 @@
 .cart-products-remove{
     border: none;
     outline: none;
-    background-color: var(--light-dark);
+    background-color: transparent;
     color: var(--light-white);
     font-size: 3rem;
     position:relative;
@@ -44,4 +45,14 @@
 
 .cart-products-remove:active{
     color: var(--main-orange);
+}
+
+
+@media screen and (max-width: 640px) {
+  .cart-products-title{
+    font-size: 1.1rem;
+  }
+  .cart-products-remove{
+    font-size: 5rem;
+  }
 }

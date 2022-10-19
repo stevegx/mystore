@@ -1,3 +1,10 @@
+.sidebar{
+    display: flex;
+    flex-direction:column;
+}
+.sidebar-toggleFilters{
+    display: none;
+}
 .sidebar-container{
     display: flex;
     flex-direction: column;
@@ -9,8 +16,8 @@
     gap: 1vh 0vw;
     position: sticky;
     top: 7vh;
-    z-index: 1;
     margin-right: 4rem;
+    z-index: 1;
 }
 
 .sidebar-title{
@@ -50,4 +57,22 @@
     font-size: 1.2rem;
     text-align: center;
     margin-top: 1rem;
+}
+
+
+
+@media screen and (max-width: 640px) {
+   .sidebar-container{
+    display: flex;
+   }
+   .show{
+    display: none;
+}
+   .sidebar-toggleFilters{
+    display: flex;
+    align-self: flex-start;
+    padding: 0,5rem 1rem;
+    margin-right: 4rem;
+    border: none;
+   }
 }

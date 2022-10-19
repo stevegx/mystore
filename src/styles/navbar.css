@@ -135,3 +135,37 @@
     left: 4.5px;
     font-size: 0.8rem;
 }
+
+
+
+@media screen and (max-width: 640px) {
+    .navbar-Search input{
+        min-width: 5rem;
+    }
+
+    .navbar-menu button span{
+        font-size: 1.5rem;
+    }
+
+    .navbar-menu-favorite-badge{
+        height: 13px;
+        width: 13px;
+    }
+
+    .navbar-menu-favorite-badge h4{
+        font-size: 0.7rem;
+        left: 3px;
+    }
+
+    .navbar-menu-cart-badge{
+        height: 13px;
+        width: 13px;
+        left: 31px;
+        padding-right: 0.2rem;
+    }
+
+    .navbar-menu-cart-badge h4{
+        font-size: 0.7rem;
+        left: 3px;
+    }
+}

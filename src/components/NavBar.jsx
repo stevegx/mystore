@@ -3,7 +3,9 @@ import '../styles/navbar.css'
 import Cart from './cart/Cart.jsx'
 import Favorites from './favorites/Favorites.jsx'
 import StoreContext from '../StoreContext.jsx'
+import { Navigate, useNavigate } from "react-router-dom"
 export default function NavBar() {
+    const navigate = useNavigate()
     const item = useContext(StoreContext)
     const [searchRequest,setSearchRequest] = useState('')
 
@@ -20,10 +22,14 @@ export default function NavBar() {
             }
     },[searchRequest]);
 
+    const returnToHome = (e)=>{
+        navigate(`/`)
+    }
+
   return (
     <nav className='navbar'>
        
-        <h2 className='navbar-Logo'><span className='tone'>My</span>Store</h2>
+        <h2 onClick={returnToHome} className='navbar-Logo'><span className='tone'>My</span>Store</h2>
         
         <div className="navbar-Search">
             <span className="material-symbols-outlined">search</span>

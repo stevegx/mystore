@@ -13,7 +13,7 @@ export default function ProductList() {
                  <ProductCard
                  key = {element.id}
                  product = {element}
-                 />
+                 />          
         )
     })
   )

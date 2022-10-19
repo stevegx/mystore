@@ -35,3 +35,9 @@
 .favorite-products-remove:active{
     color: var(--main-orange);
 }
+
+@media screen and (max-width: 640px) {
+   .favorite-products-title{
+    font-size: 1rem;
+   }
+}

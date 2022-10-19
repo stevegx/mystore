@@ -21,6 +21,8 @@
     padding: 10rem 10rem;
 }
 
+
+
 .imagecarousel-container button:hover{
     background-color: #33333115;
 }
@@ -29,3 +31,18 @@
 .imagecarousel-container span{
     font-size: 3rem;
 }
+
+
+@media screen and (max-width:640px){
+    .imagecarousel-container{
+        height: 20vh;
+        width: 50%;
+        margin: 2.5rem 6rem;
+    }
+  .imagecarousel-container button{
+    padding: 2rem;
+    margin: 1rem;
+  }
+}
+
+

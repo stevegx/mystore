@@ -13,9 +13,14 @@
 
 
 
-@media screen and (max-width: 756px) {
+@media screen and (max-width: 640px) {
     .main-section-list{
         grid-template-columns: 1fr;
-        margin: 5rem;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .show{
+        display: none;
     }
 }

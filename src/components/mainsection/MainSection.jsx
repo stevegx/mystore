@@ -4,6 +4,7 @@ import '../../styles/mainsection.css'
 import SideBar from './SideBar.jsx'
 import ImageCarousel from './ImageCarousel.jsx'
 
+
 export default function MainSection() {
 
 

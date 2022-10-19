@@ -73,12 +73,17 @@ const handleCategory = (e)=>{
     const checkedCategory = categoryList.map((item)=> item.id == e.target.id?{...item,isChecked:!item.isChecked}:item)
     setCategoryValue(checkedCategory)
 }
-  
+ 
+const handleFilterMenu = (e)=>{
+    e.nativeEvent.path[3].childNodes[1].classList.toggle('show')
+    e.nativeEvent.path[2].children[1].classList.toggle('show')
+}
+
   return (
     
-    
-    <div className='sidebar-container'>
-        
+    <div className='sidebar'>
+        <button onClick={handleFilterMenu} className='sidebar-toggleFilters'><span className="material-symbols-outlined">menu</span></button>
+    <div className='sidebar-container show'>
         <h3 className='sidebar-title'>Filters</h3>
         <DataList setSortValue={setSortValue}/>
         <form className="sidebar-category">
@@ -105,6 +110,6 @@ const handleCategory = (e)=>{
         <input type="range" className='sidebar-price' min={min} max={max} step={10} value={priceValue} onChange={(e)=>setPriceValue(e.target.value)}/>
       
     </div>
-
+    </div>
   )
 }

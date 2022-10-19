@@ -9,6 +9,7 @@
     background-color: #333331f6;
     color: var(--light-white);
     overflow-y: auto;
+    z-index: 1;
 }
 
 
@@ -28,3 +29,10 @@
  .navbar-favorites-menu h1{
     text-align: center;
  }
+
+ @media screen and (max-width: 640px) {
+.navbar-favorites-menu{
+    width: 80%;
+}
+  
+}

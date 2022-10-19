@@ -4,8 +4,10 @@ import MainSection from '../components/mainsection/MainSection'
 export default function MainPage() {
   return (
     <>
+    
     <NavBar/>
     <MainSection/>
+   
     </>
     
   )
