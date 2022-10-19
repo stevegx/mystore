@@ -29,8 +29,6 @@ const applyFilters = ()=>{
     if(categorizedArray.length>0){
         filteredArray = categorizedArray.flat(1)
     }
-       
-    
 
     if(priceValue){
         filteredArray = filteredArray.filter(product => product.price > priceValue)
@@ -38,29 +36,28 @@ const applyFilters = ()=>{
 
     switch (sortValue) {
         case "popularity":
-        filteredArray.sort((a,b)=> b.rating.count - a.rating.count)
-        
+        filteredArray = filteredArray.sort((a,b)=> b.rating.count - a.rating.count)
         break;
         
         case "pricelow":
-        filteredArray.sort((a,b)=> a.price - b.price)
+        filteredArray = filteredArray.sort((a,b)=> a.price - b.price)
         break;    
         
         case "pricehigh":
-        filteredArray.sort((a,b)=> b.price-a.price )
+        filteredArray = filteredArray.sort((a,b)=> b.price-a.price )
         break;
     
         case "ratinglow":
-        filteredArray.sort((a,b)=> a.rating.rate - b.rating.rate)
+        filteredArray = filteredArray.sort((a,b)=> a.rating.rate - b.rating.rate)
         break;
         
         case "ratinghigh":
-        filteredArray.sort((a,b)=> b.rating.rate -a.rating.rate )
+        filteredArray = filteredArray.sort((a,b)=> b.rating.rate -a.rating.rate )
         break;
         
         
         default:
-        filteredArray.sort((a,b)=> b.rating.count - a.rating.count)
+        filteredArray = filteredArray.sort((a,b)=> b.rating.count - a.rating.count)
         break;
     }
 
