@@ -1,88 +1,113 @@
 import React, { useState , useContext, useEffect,useRef} from 'react'
 import '../../styles/sidebar.css'
 import StoreContext from '../../StoreContext'
-import { isAccordionItemSelected } from 'react-bootstrap/esm/AccordionContext'
+import DataList from './DataList.jsx'
 export default function SideBar() {
     
     const item = useContext(StoreContext)
     const [min,setMin] = useState(0)
     const [max,setMax] = useState(1100)
     const [priceValue,setPriceValue] = useState(0)
-    const [category,setCategory] = useState([
-    {index:0,id:"men's clothing" , isChecked:false},
-    {index:1,id:"jewelery" , isChecked:false},
-    {index:2,id:"electronics" , isChecked:false},
-    {index:3,id:"women's clothing" , isChecked:false},
-  ])
+    const [categoryValue,setCategoryValue] = useState([
+        {id:"men's clothing" , isChecked:false},
+        {id:"jewelery" , isChecked:false},
+        {id:"electronics" , isChecked:false},
+        {id:"women's clothing" , isChecked:false},])
+    const [sortValue,setSortValue] = useState("")
 
+const applyFilters = ()=>{
+    let filteredArray = item.getProducts
 
-useEffect(()=>{
+    const categoryChecked = categoryValue.filter((item)=>item.isChecked).map((item)=>item.id.toLowerCase())
+    let categorizedArray = []
     
-    let categoryFilter = []
-    for (let index = 0; index < category.length; index++) {
-       if(category[index].isChecked ==true){
-           let value = item.filteredArray.filter(product => product.category == category[index].id)
-            categoryFilter=[...categoryFilter,value]
-       }
-        }   
-
-    let example = categoryFilter.flat(1)
-    let newArray
-   
- 
-    if(example.length==0)
-    {
-        newArray = item.products
-        // item.setProducts(item.getProducts)
-        newArray = item.filteredArray.filter(product => product.price > priceValue)
-        item.setProducts(newArray)
-    }else if(example.length!=0){
-       newArray =  example.filter(product=>product.price > priceValue)
-        item.setProducts(newArray)
+        for(let index=0;index<categoryChecked.length;index++){
+            let value= item.getProducts.filter(product =>product.category==categoryChecked[index])
+            categorizedArray=[...categorizedArray,value]
+        }
+    
+    if(categorizedArray.length>0){
+        filteredArray = categorizedArray.flat(1)
     }
-},[category,priceValue])
+       
+    
 
-const handleCheck = (e)=>{
-    setCategory(category.map(obj =>{
+    if(priceValue){
+        filteredArray = filteredArray.filter(product => product.price > priceValue)
+    }
 
-        if(obj.index == e.target.value){
-            return {...obj, isChecked:!obj.isChecked}
-        }else{
-                return obj
-            }
-    }))
+    switch (sortValue) {
+        case "popularity":
+        filteredArray.sort((a,b)=> b.rating.count - a.rating.count)
+        
+        break;
+        
+        case "pricelow":
+        filteredArray.sort((a,b)=> a.price - b.price)
+        break;    
+        
+        case "pricehigh":
+        filteredArray.sort((a,b)=> b.price-a.price )
+        break;
+    
+        case "ratinglow":
+        filteredArray.sort((a,b)=> a.rating.rate - b.rating.rate)
+        break;
+        
+        case "ratinghigh":
+        filteredArray.sort((a,b)=> b.rating.rate -a.rating.rate )
+        break;
+        
+        
+        default:
+        filteredArray.sort((a,b)=> b.rating.count - a.rating.count)
+        break;
+    }
+
+    item.setProducts(filteredArray)
 }
- 
   
+useEffect(()=>{
+    applyFilters()
+},[sortValue,categoryValue,priceValue])
+
+const handleCategory = (e)=>{
+    const categoryList = categoryValue
+    const checkedCategory = categoryList.map((item)=> item.id == e.target.id?{...item,isChecked:!item.isChecked}:item)
+    setCategoryValue(checkedCategory)
+}
   
   return (
+    
+    
     <div className='sidebar-container'>
+        
         <h3 className='sidebar-title'>Filters</h3>
-
+        <DataList setSortValue={setSortValue}/>
         <form className="sidebar-category">
             <h3>Category <span className='product-array-length'>({item.products.length})</span></h3>
             <div className='sidebar-category-option'>
                 <label htmlFor="mensclothing">Men's clothing</label>
-                <input type="checkbox" className='mensclothing checkbox'  id='mensclothing' onChange={handleCheck} value={category[0].index}/>
+                <input type="checkbox" className='mensclothing checkbox'  id="men's clothing" onChange={handleCategory} />
             </div>
             <div className='sidebar-category-option'>
                 <label htmlFor="Jewelery">Jewelery</label>
-                <input type="checkbox" className='Jewelery checkbox' id='jewelery' onChange={handleCheck} value={category[1].index}/>
+                <input type="checkbox" className='Jewelery checkbox' id='jewelery' onChange={handleCategory} />
             </div>
             <div className='sidebar-category-option'>
                 <label htmlFor="Electronics">Electronics</label>
-                <input type="checkbox" className='Electronics checkbox' id='electronics' onChange={handleCheck} value={category[2].index}/>
+                <input type="checkbox" className='Electronics checkbox' id='electronics' onChange={handleCategory}/>
             </div>
            <div className='sidebar-category-option'>
                 <label htmlFor="womensclothing">Women's clothing</label>
-                <input type="checkbox" className='womensclothing checkbox' id='womensclothing' onChange={handleCheck} value={category[3].index}/>
+                <input type="checkbox" className='womensclothing checkbox' id="women's clothing" onChange={handleCategory}/>
            </div>
         </form>
        
-        <h3 className='sidebar-price'>Price > {priceValue}$ <span className='product-array-length'>({item.products.length})</span></h3>
+        <h3 className='sidebar-price'>Price {'>'} {priceValue}$ <span className='product-array-length'>({item.products.length})</span></h3>
         <input type="range" className='sidebar-price' min={min} max={max} step={10} value={priceValue} onChange={(e)=>setPriceValue(e.target.value)}/>
       
-    
     </div>
+
   )
 }
