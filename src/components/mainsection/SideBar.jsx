@@ -83,7 +83,6 @@ const handleCheck = (e)=>{
         <input type="range" className='sidebar-price' min={min} max={max} step={10} value={priceValue} onChange={(e)=>setPriceValue(e.target.value)}/>
       
     
-    
     </div>
   )
 }

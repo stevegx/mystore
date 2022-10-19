@@ -8,6 +8,7 @@ export default function DataList({}) {
     const [sortArray,setSortArray] = useState([])
 
 
+
     useEffect(()=>{
         //checkareto kai me if thn prwth fora douleuei tis upoloipes xreiazetai kapoio refresh
 
@@ -50,10 +51,9 @@ export default function DataList({}) {
                 item.setProducts(item.filteredArray)
                 break;
         }
-
     },[sortOption,sortArray])
     
-   
+  
 
     const handleOption = (e)=>{
     setSortOption(e.target.value)

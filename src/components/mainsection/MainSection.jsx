@@ -19,9 +19,6 @@ export default function MainSection() {
     </div>
     </Suspense>
       </div>
-    
-   
-  
     </>
   )
 }
