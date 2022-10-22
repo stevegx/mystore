@@ -10,13 +10,13 @@
     flex-direction: column;
     background-color: #333331e0;
     height: 93vh;
-    width: 20rem;
+    width: 19rem;
     color: var(--light-white);
     padding: 1vh 1vw;
     gap: 1vh 0vw;
     position: sticky;
     top: 7vh;
-    margin-right: 4rem;
+    margin-right: 2rem;
     z-index: 1;
 }
 
@@ -74,5 +74,6 @@
     padding: 0,5rem 1rem;
     margin-right: 4rem;
     border: none;
+    cursor: pointer;
    }
 }

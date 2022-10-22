@@ -1,13 +1,13 @@
 .product-page{
     display: flex;
-    padding: 8rem 15rem;
+    padding: 8rem 10rem;
     align-items: center;
 }
 
 
 .product-page img{
-    height: 25%;
-    width: 25%;
+    height: 35%;
+    width: 35%;
     object-fit: contain;
     /* margin: 4rem; */
 }

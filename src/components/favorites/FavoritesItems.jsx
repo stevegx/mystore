@@ -1,5 +1,4 @@
 import React, {useContext}  from 'react'
-import { useEffect } from 'react'
 import StoreContext from '../../StoreContext'
 import '../../styles/favoriteitems.css'
 export default function FavoritesItems(favoriteItems) {

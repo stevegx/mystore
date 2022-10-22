@@ -3,12 +3,12 @@ import '../styles/navbar.css'
 import Cart from './cart/Cart.jsx'
 import Favorites from './favorites/Favorites.jsx'
 import StoreContext from '../StoreContext.jsx'
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 export default function NavBar() {
     const navigate = useNavigate()
     const item = useContext(StoreContext)
     const [searchRequest,setSearchRequest] = useState('')
-
+    const [searchArray,setSearchArray] = useState([])
     const toggleUserMenu = (e)=>{
     e.nativeEvent.path[2].children[1].classList.toggle('hide')
     }
@@ -16,16 +16,18 @@ export default function NavBar() {
     useEffect(() => {
             if(searchRequest.length > 0){
                 let newArray = item.filteredArray.filter(item => item.title.toLowerCase().includes(searchRequest))
-                item.setProducts(newArray)
+                setSearchArray(newArray)
             }else{
-                item.setProducts(item.filteredArray)
+                setSearchArray([])
             }
     },[searchRequest]);
 
     const returnToHome = (e)=>{
         navigate(`/`)
     }
-
+const handleClick= (e)=>{
+    navigate(`/${e.target.__reactProps$cwxgp5itlnh.children}`)
+}
   return (
     <nav className='navbar'>
        
@@ -34,7 +36,15 @@ export default function NavBar() {
         <div className="navbar-Search">
             <span className="material-symbols-outlined">search</span>
             <input type="text" value={searchRequest} onChange={(e)=>{setSearchRequest(e.target.value)}}/>
+            <div className='navbar-search-results'>
+                {searchArray.map((results)=>{
+                    return (
+                        <h4 key={results.id} onClick={handleClick} className='search-results'>{results.title}</h4>
+                    )
+                })}
+            </div>
         </div>
+        
 
         <div className="navbar-menu">
             

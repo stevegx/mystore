@@ -3,11 +3,14 @@
 }
 
 .main-section-list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 2vh 0vw;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 2vh 0vw; */
     align-items: center;
-    gap: 4vh 2vw;
+    justify-content: space-between;
+    /* gap: 4vh 2vw; */
     background-color: var(--light-white);
 }
 

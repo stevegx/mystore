@@ -23,7 +23,7 @@
 .favorite-products-remove{
     border: none;
     outline: none;
-    background-color: var(--light-dark);
+    background-color: transparent;
     color: var(--light-white);
     font-size: 3rem;
     position:relative;
