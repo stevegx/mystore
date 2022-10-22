@@ -3,24 +3,12 @@
 }
 
 .main-section-list{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr; */
     display: flex;
     flex-wrap: wrap;
-    /* margin: 2vh 0vw; */
-    align-items: center;
-    justify-content: space-between;
-    /* gap: 4vh 2vw; */
+    align-items: center;   
     background-color: var(--light-white);
 }
 
-
-
-@media screen and (max-width: 640px) {
-    .main-section-list{
-        grid-template-columns: 1fr;
-    }
-}
 
 @media screen and (max-width: 640px){
     .show{

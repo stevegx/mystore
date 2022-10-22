@@ -26,7 +26,8 @@ export default function NavBar() {
         navigate(`/`)
     }
 const handleClick= (e)=>{
-    navigate(`/${e.target.__reactProps$cwxgp5itlnh.children}`)
+    // console.log(e);
+    navigate(`/${e.target.innerText}`)
 }
   return (
     <nav className='navbar'>

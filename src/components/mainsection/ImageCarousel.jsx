@@ -12,7 +12,7 @@ export default function ImageCarousel() {
     const previousImage = (e)=>{
         if(imageIndex>0){
             setImageIndex(imageIndex - 1)
-        }else if(imageIndex<=0){
+        }else if(imageIndex==0){
             setImageIndex(Images.length)
         }
     }
