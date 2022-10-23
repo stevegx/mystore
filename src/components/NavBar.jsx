@@ -26,7 +26,6 @@ export default function NavBar() {
         navigate(`/`)
     }
 const handleClick= (e)=>{
-    // console.log(e);
     navigate(`/${e.target.innerText}`)
 }
   return (
