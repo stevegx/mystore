@@ -22,10 +22,8 @@ const addToFavorite = (e)=>{
   const exist = item.favoriteItems.find((element) => element.id === saveClickItem.id)
   if(exist){
     item.setFavoriteItems(item.favoriteItems.filter((element)=> element.id !== saveClickItem.id))
-    e.target.classList.toggle("active")
   }else{
     item.setFavoriteItems([...item.favoriteItems,product])
-    e.target.classList.toggle("active")
   }
 }
 

@@ -3,12 +3,13 @@
 }
 
 .main-section-list{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;   
-    background-color: var(--light-white);
+    background-color: #f4f4f5;
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    gap: 3rem;
+   
 }
-
 
 @media screen and (max-width: 640px){
     .show{

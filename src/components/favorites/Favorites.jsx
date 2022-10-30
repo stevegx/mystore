@@ -1,21 +1,27 @@
 import React from 'react'
+import { useState , useRef , useEffect } from 'react'
 import '../../styles/favorites.css'
 import FavoritesList from './FavoritesList.jsx'
 
 export default function Favorites() {
-    const toggleMenu = (e)=>{
-        e.nativeEvent.path[2].children[4].classList.toggle('hide')
-    }
+    const [isOpen,setIsOpen] = useState(false)
+    const favRef = useRef()
+    const menuRef = useRef()
+    useEffect(()=>{
+        const closeDropdown = e =>{
+          if(e.path[1] !== favRef.current && e.path[0] !== menuRef.current)
+          setIsOpen(false)
+        }
+        document.body.addEventListener('click', closeDropdown)
+        return ()=> document.body.removeEventListener('click', closeDropdown)
+      },[])
 
-    const toggleFavorites = (e)=>{
-        e.nativeEvent.path[2].classList.toggle('hide')
-    }
   return (
     <>
-        <button onClick={toggleMenu}><span className="material-symbols-outlined">favorite</span></button>
-        <div className='navbar-favorites-menu hide'>
+        <button ref={favRef} onClick={()=>{setIsOpen(!isOpen)}} ><span className="material-symbols-outlined">favorite</span></button>
+        <div ref={menuRef} className={'navbar-favorites-menu hide'+ (isOpen?'hide':'')}>
             <h1>Favorites</h1>
-            <button onClick={toggleFavorites}><span className="material-symbols-outlined">close</span></button>
+            <button onClick={()=>{setIsOpen(!isOpen)}} ><span className="material-symbols-outlined">close</span></button>
             <FavoritesList/>
         </div>
     </>

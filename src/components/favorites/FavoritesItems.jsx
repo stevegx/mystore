@@ -5,11 +5,9 @@ export default function FavoritesItems(favoriteItems) {
  
     const item = useContext(StoreContext)
 
- 
-
-  const deleteItems = (e)=>{
+   const deleteItems = (e)=>{
     item.setFavoriteItems(item.favoriteItems.filter((element)=> element.id !== favoriteItems.favoriteItems.id))
-  }
+    }
 
   return (
     <>

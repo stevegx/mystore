@@ -1,7 +1,8 @@
 .product-page{
     display: flex;
-    padding: 8rem 10rem;
+    padding: 5rem 10rem;
     align-items: center;
+
 }
 
 
@@ -9,7 +10,6 @@
     height: 35%;
     width: 35%;
     object-fit: contain;
-    /* margin: 4rem; */
 }
 
 .product-page-details{
@@ -21,16 +21,17 @@
     text-align: center;
 }
 .product-page h2{
-    font-size: 2rem;    
+    font-size: 1.7rem;    
 }
-
+.product-page h3{
+    font-size: 1.5rem;
+}
 .product-page h4{
     display: flex;
 }
 
 .product-page p{
-    font-size: 1.6rem;
-    margin: 1rem;
+    font-size: 1.3rem;
 }
 
 .product-page-buybtn{
